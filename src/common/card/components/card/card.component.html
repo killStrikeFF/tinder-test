@@ -1,0 +1,19 @@
+<mat-card *ngIf="(currentUser$ | async) as userInfo">
+  <mat-card-content>
+    <div class="image-wrapper">
+      <div class="info-wrapper">{{userInfo.name}}, {{userInfo.age}}</div>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <div class="actions-wrapper">
+      <button mat-raised-button
+              color="primary"
+              (click)="updateEvaluation(true)"
+      >Like</button>
+      <button mat-raised-button
+              color="primary"
+              (click)="updateEvaluation(false)"
+      >Dislike</button>
+    </div>
+  </mat-card-actions>
+</mat-card>
